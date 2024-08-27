@@ -27,6 +27,4 @@ int main() {
     // Print Total Price
     cout << "If you want them all, that will be $" << totalPrice << endl;
 
-
-
 }
