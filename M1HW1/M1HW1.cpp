@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-    
+
     // Box office source: https://www.boxofficemojo.com/title/tt0167261/ 
     // Quote source: https://www.imdb.com/title/tt0167261/quotes/
 
@@ -26,7 +26,7 @@ int main() {
     cout << "Movie Details:" << endl;
     cout << "Movie Title: " << movieName << endl;
     cout << "Movie Release Year: " << releaseYear << endl;
-    cout << "Movie Worldwide Box Office: " << worldWideBoxOffice << "\n" << endl;
+    cout << "Movie Worldwide Box Office: $" << worldWideBoxOffice << " Million\n" << endl;
 
     // Display Quotes:
     cout << "Movie Quotes:" << endl;
