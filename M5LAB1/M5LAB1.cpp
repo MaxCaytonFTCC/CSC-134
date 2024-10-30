@@ -1,10 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// CSC 134 
-// M5LAB1
-// Max Cayton
-// 10/30/24
+
 
 void main_menu();
 void choice_front_door();
