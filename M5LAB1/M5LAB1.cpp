@@ -1,30 +1,19 @@
 #include <iostream>
 using namespace std;
 
-/*
-CSC 134
-M5LAB1 - Choose Your Own Adventure
-[name]
-[date]
-This template serves as a starting point
-for your own program. We'll be using
-void functions to tell a simple story,
-where the user gets to make choices.
+// CSC 134 
+// M5LAB1
+// Max Cayton
+// 10/30/24
 
-You can fork this template by clicking on the name above, then click the three
-dots on the top right, and click 'fork repl'. This makes a copy for you to use.
-*/
-
-// Function Prototypes
-// Any functions you make will need to
-// be listed here, in this format, at the top.
-// This is so the compiler knows to save
-// room for them in the final program.
 void main_menu();
 void choice_front_door();
 void choice_back_door();
 void choice_go_home();
-// TODO: add more choices here
+void choice_go_inside();
+void choice_cpp();
+void choice_java();
+void choice_div();
 
 int main() {
   cout << "M5LAB1 - Choose Your Own Adventure" << endl;
@@ -36,7 +25,6 @@ int main() {
 }
 
 void main_menu() {
-  // Write a simple menu that lets the user choose 1,2, or 3, or 4 to quit.
   cout << "Main Menu" << endl;
   cout << "You're in front of a spooky old house..." << endl;
   cout << "Do you:" << endl;
@@ -50,23 +38,23 @@ void main_menu() {
   if (1 == choice) {
     choice_front_door();
   } else if (2 == choice) {
-    // call choice 2 here
+    choice_back_door();
   } else if (3 == choice) {
-    // call choice 3 here
+    choice_go_home();
   } else if (4 == choice) {
     cout << "Ok, quitting game" << endl;
     return; // go back to main()
   } else {
     cout << "That's not a valid choice, please try again." << endl;
-    cin.ignore(); // clear the user input
-    main_menu();  // try again
+    
+    // Added '.clear()' due to infinite loop when inputing an invalid string
+    cin.clear();
+    cin.ignore();
+
+    main_menu();
   }
 }
 
-// FUNCTION DEFINITIONS
-// OK, we have the prototypes at the top, but
-// now we have to actually write the functions.
-// They go here, after main().
 void choice_front_door() {
   cout << "Try the front door." << endl;
   cout << "It's locked. " << endl;
@@ -80,15 +68,86 @@ void choice_front_door() {
     choice_back_door();
   } else if (2 == choice) {
     choice_go_home();
+  } 
+  else {
+    cout << "That's not a valid choice, please try again." << endl;  
+    cin.clear();
+    cin.ignore();
+    choice_front_door();
   }
 }
 
 void choice_back_door() { 
-    cout << "TODO: Write something here" << endl;
+  cout << "Sneak around to the back door" << endl;
+  cout << "It slowly opens with a loud creaking sound." << endl;
+  cout << "Do you:" << endl;
+  cout << "1. Go inside" << endl;
+  cout << "2. Go home instead" << endl;
+  int choice;
+  cout << "Choose: ";
+  cin >> choice;
+  if (1 == choice) {
+    choice_go_inside();
+  } else if (2 == choice) {
+    choice_go_home();
+  }
+  else {
+    cout << "That's not a valid choice, please try again." << endl;  
+    cin.clear();
+    cin.ignore();
+    choice_back_door();
+  }  
+}
+
+void choice_go_inside() {
+  cout << "You slowly creep inside" << endl;
+  cout << "A spectral figure descends from above" << endl;
+  cout << "\"Who are you..?\" the specter asks" << endl;
+  cout << "Do you:" << endl;
+  cout << "1. Say \"A C++ Programmer!\"" << endl;
+  cout << "2. Say \"A Java Programmer!\"" << endl;
+  cout << "3. Ask it how to center a <div>" << endl;
+  cout << "4. Flee and return home" << endl;
+  int choice;
+  cout << "Choose: ";
+  cin >> choice;
+  if (1 == choice) {
+    choice_cpp();
+  } else if (2 == choice) {
+    choice_java();
+  } else if (3 == choice) {
+    choice_div();
+  } else if (4 == choice) {
+    choice_go_home();
+  }  
+  else {
+    cout << "That's not a valid choice, please try again." << endl;  
+    cin.clear();
+    cin.ignore();
+    choice_go_inside();
+  }
+}
+
+void choice_cpp() {
+  cout << "The specter leaves you alone, for it knows that you will be able" << endl;
+  cout << "to run far too fast to be caught" << endl;
+  cout << "You return home safely" << endl;
+}
+
+void choice_java() {
+  cout << "The specter sympathizes with your poor lost soul." << endl;
+  cout << "It decides to let you go out of mercy." << endl;
+  cout << "You return home, but are you truly free?" << endl;
+}
+
+void choice_div() {
+  cout << "The specter is enraged by your ignorance." << endl;
+  cout << "It tried to annihilate you by sending a bolt of magic at the center of the room." << endl;
+  cout << "But for some reason, the magical bolt was aligned to the left side of the room, missing you entirely." << endl;
+  cout << "You take this opportunity to run away and return home. Then you look at W3Schools." << endl;
 }
 
 void choice_go_home() {
-    cout << "TODO: Write something here" << endl;
+    cout << "You prove you are not the average horror movie protagonist and do the sensible thing." << endl;
+    cout << "You return safely home." << endl;
 }
-
-// any new choices go here
