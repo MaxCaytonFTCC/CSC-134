@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 class Restaurant {
@@ -28,26 +27,20 @@ void Restaurant::Print() const {
 
 int main() {
 
-    vector<Restaurant> restaurants;
-
     Restaurant miCasita = Restaurant();
     miCasita.SetName("Mi Casita");
     miCasita.SetRating(5); // I agree, Mi Casita is amazing.
-    restaurants.push_back(miCasita);
+    miCasita.Print();
 
     Restaurant krustyKrab = Restaurant();
     krustyKrab.SetName("The Krusty Krab");
     krustyKrab.SetRating(4);
-    restaurants.push_back(krustyKrab);
+    krustyKrab.Print();
 
     Restaurant chumBucket = Restaurant();
     chumBucket.SetName("The Chum Bucket");
     chumBucket.SetRating(2);
-    restaurants.push_back(chumBucket);
-
-    for (int i = 0; i < restaurants.size(); i++) {
-        restaurants[i].Print();
-    }
+    chumBucket.Print();
 
     return 0;
 }
